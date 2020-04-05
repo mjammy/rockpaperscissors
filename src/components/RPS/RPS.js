@@ -8,8 +8,13 @@ class RPS extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice: "OG",
+      choice: this.props.choice,
+      player: null,
     };
+  }
+
+  renderPlayer(num) {
+    return <h1>Player {num}</h1>;
   }
 
   renderChoice(choice) {
@@ -18,11 +23,12 @@ class RPS extends React.Component {
 
   render() {
     return (
-      <div> 
-        <Rock onClick={() => this.setState({choice: "Rock"})}/>
-        <Paper onClick={() => this.setState({choice: "Paper"})}/>
-        <Scissors onClick={() => this.setState({choice: "Scissors"})}/>
-        {this.renderChoice(this.state.choice)}
+      <div>
+        {this.renderPlayer(this.props.player)}
+        <Rock onClick={() => this.props.onChoose("Rock")}/>
+        <Paper onClick={() => this.props.onChoose("Paper")}/>
+        <Scissors onClick={() => this.props.onChoose("Scissors")}/>
+        {this.renderChoice(this.props.choice)}
       </div> 
     );
   }
