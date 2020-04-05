@@ -15,7 +15,7 @@ class App extends React.Component {
   handleChoice(i, choice) {
     const choices = this.state.choices.slice();
     choices[i] = choice;
-    this.setState({choices: choices});
+    this.setState({choices: choices, submitted: false});
   }
 
   renderSubmission() {
@@ -29,8 +29,6 @@ class App extends React.Component {
       let choice1 = this.state.choices[0];
       let choice2 = this.state.choices[1];
       var result;
-
-      //alert((wins[choice1]) == choice2);
   
       if (choice1 == choice2) {
         result = "Tie.";
