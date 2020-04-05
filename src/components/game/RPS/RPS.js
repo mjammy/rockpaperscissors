@@ -9,26 +9,17 @@ class RPS extends React.Component {
     super(props);
     this.state = {
       choice: this.props.choice,
-      player: null,
     };
-  }
-
-  renderPlayer(num) {
-    return <h1>Player {num}</h1>;
-  }
-
-  renderChoice(choice) {
-    return <h2>{choice}</h2>;
   }
 
   render() {
     return (
       <div>
-        {this.renderPlayer(this.props.player)}
+        <h2>Player {this.props.player}</h2>
         <Rock onClick={() => this.props.onChoose("Rock")}/>
         <Paper onClick={() => this.props.onChoose("Paper")}/>
         <Scissors onClick={() => this.props.onChoose("Scissors")}/>
-        {this.renderChoice(this.props.choice)}
+        <h4>{this.props.choice}</h4>
       </div> 
     );
   }
