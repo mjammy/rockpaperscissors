@@ -19,12 +19,36 @@ class App extends React.Component {
   }
 
   renderSubmission() {
-    if(this.state.submitted) {
+    const wins = {
+      "Rock": "Scissors",
+      "Paper": "Rock",
+      "Scissors": "Paper" 
+    };
+    
+    if (this.state.submitted) {
+      let choice1 = this.state.choices[0];
+      let choice2 = this.state.choices[1];
+      var result;
+
+      //alert((wins[choice1]) == choice2);
+  
+      if (choice1 == choice2) {
+        result = "Tie.";
+      }
+      else if ((wins[choice1]) == choice2) {
+        result = "Player 1 Wins!";
+      }
+      else {
+        result = "Player 2 Wins!";
+      }
+
       return (
         <div>
-          <h4>{this.state.choices[0]}</h4>
+          <h4>{choice1}</h4>
           <h6>vs.</h6>
-          <h4>{this.state.choices[1]}</h4>
+          <h4>{choice2}</h4>
+          <br/>
+          <h3>{result}</h3>
         </div>
       );
     }
