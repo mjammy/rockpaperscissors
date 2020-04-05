@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
 
-import Battle from '../Battle.js'
+import RPS from '../RPS/RPS.js'
 
-function App() {
-  return <Battle/>;
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1> Lets try this</h1>
+        <RPS/>
+      </div>
+    );
+  }
 }
 
 export default App;

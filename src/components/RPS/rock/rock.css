@@ -1,0 +1,6 @@
+@import '../RPS.css';
+
+.rock {
+    position: relative;
+    left: 30px;
+}

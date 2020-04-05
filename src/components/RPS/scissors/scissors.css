@@ -1,0 +1,6 @@
+@import '../RPS.css';
+
+.scissors {
+    position: relative;
+    left: 30px;
+}

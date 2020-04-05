@@ -1,0 +1,6 @@
+@import '../RPS.css';
+
+.paper {
+    position: relative;
+    left: 30px;
+}
