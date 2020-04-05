@@ -5,8 +5,12 @@ import React from 'react';
 
 class Scoreboard extends React.Component {
         
-    renderScoreRow(player) {
+    renderPlayerScoreRow(player) {
         return <h3>Player {player}: {this.props.scores[player-1]}</h3>;
+    }
+
+    renderTieRow() {
+        return <h3>Tie: {this.props.scores[2]}</h3>;
     }
 
     render() {
@@ -14,8 +18,9 @@ class Scoreboard extends React.Component {
             <div>
                 <h1>Scoreboard</h1>
                 <div>
-                    {this.renderScoreRow(1)}
-                    {this.renderScoreRow(2)}
+                    {this.renderPlayerScoreRow(1)}
+                    {this.renderPlayerScoreRow(2)}
+                    {this.renderTieRow()}
                     <button onClick={() => this.props.onReset()}>Reset</button>
                 </div>
                 <hr />

@@ -8,22 +8,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scores: [0,0],
+      scores: [0,0,0],
     };
   }
 
   ////////////////////////////////////////////////////
 
   handleResult(result) {
-    let i = result.charAt(7)-1;
-    
+    let i = (/\d/.test(result) ? result.charAt(7)-1 : 2);
+
     const scores = this.state.scores.slice();
     scores[i]++;
     this.setState({scores: scores});
   }
 
   handleReset() {
-    this.setState({scores: [0,0]});
+    this.setState({scores: [0,0,0]});
   }
 
   ////////////////////////////////////////////////////
